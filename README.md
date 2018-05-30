@@ -7,9 +7,9 @@ The authors table includes information about the authors of articles.
 The articles table includes the articles themselves.
 The log table includes one entry for each time a user has accessed the site.
 The project drives following conclusions:
-Most popular three articles of all time.
-Most popular article authors of all time.
-Days on which more than 1% of requests lead to errors.
+1.Most popular three articles of all time.
+2.Most popular article authors of all time.
+3.Days on which more than 1% of requests lead to errors.
 ## Instructions
 ### Install Vagrant and VirtualBox.
 ### Clone the repository to your local machine:
