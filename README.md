@@ -13,7 +13,7 @@ Days on which more than 1% of requests lead to errors.
 ## Instructions
 ### Install Vagrant and VirtualBox.
 ### Clone the repository to your local machine:
-git clone https://github.com/visheshbanga/Log-Analysis-Udacity-Project
+git clone https://github.com/krishnam4b3/loganalysis.git
 ### Start the virtual machine
 From your terminal, inside the project directory, run the command `vagrant up`. This will cause Vagrant to download the Linux operating system and install it. When vagrant up is finished running, you will get your shell prompt back. At this point, you can run `vagrant ssh` to log in to your newly installed Linux VM!
 ### Download the data
