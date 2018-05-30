@@ -1,5 +1,15 @@
 import psycopg2
 from datetime import date
+# Connect to the database and feed query to extract results
+
+
+def get_output(data):
+    db = psycopg2.connect("dbname = news")
+    c = db.cursor()
+    c.execute(data)
+    implement = c.fetchall()
+    db.close()
+    return implement
 ques_1 = "What are the most popular articles of all time?"
 
 p_articles = ("SELECT title, count(*) as views FROM articles \n"
@@ -34,16 +44,6 @@ p_errors = """
            on a.day = b.day)
            as t where errp > 1.0
            """
-# Connect to the database and feed query to extract results
-
-
-def get_output(data):
-    db = psycopg2.connect("dbname = news")
-    c = db.cursor()
-    c.execute(data)
-    implement = c.fetchall()
-    db.close()
-    return implement
 
 r1 = get_output(p_articles)
 r2 = get_output(p_authors)
