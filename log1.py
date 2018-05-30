@@ -13,21 +13,21 @@ def get_output(data):
     return implement
 ques_1 = "What are the most popular articles of all time?"
 
-p_articles = ("SELECT title, count(*) as views FROM articles \n"
-              "join log\n"
-              "on articles.slug = substring(log.path, 10)\n"
-              "group by title ORDER BY views DESC LIMIT 3;")
+p_articles = """SELECT title, count(*) as views FROM articles \n
+                join log\n
+                on articles.slug = substring(log.path, 10)\n
+                group by title ORDER BY views DESC LIMIT 3;"""
 
 ques_2 = "Who are the most popular article authors of all time?"
 
-p_authors = ("select authors.name, count(*) as views\n"
-             "from articles \n"
-             "join authors\n"
-             "on articles.author = authors.id \n"
-             "join log \n"
-             "on articles.slug = substring(log.path, 10)\n"
-             "where log.status LIKE '200 OK'\n"
-             "group by authors.name ORDER BY views DESC;")
+p_authors = """select authors.name, count(*) as views\n
+               from articles \n
+               join authors\n
+               on articles.author = authors.id \n
+               join log \n
+               on articles.slug = substring(log.path, 10)\n
+               where log.status LIKE '200 OK'\n
+               group by authors.name ORDER BY views DESC;"""
 
 ques_3 = "On which days more than 1% of the requests led to error?"
 
