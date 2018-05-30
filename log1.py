@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import psycopg2
 from datetime import date
 # Connect to the database and feed query to extract results
@@ -71,4 +72,3 @@ def errors_percentage():
     for i, j in r3:
         print("""{0: %B %d, %Y} -- {1: .2f} % errors""".format(i, j))
 errors_percentage()
-
